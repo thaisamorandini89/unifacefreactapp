@@ -1,7 +1,9 @@
 import './api/axios.api';
+
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as store from './mobx';
+
 import Routes from './routes';
 import { createBrowserHistory } from 'history';
 import { Provider } from 'mobx-react';
@@ -18,8 +20,8 @@ const history = syncHistoryWithStore(browserHistory, router);
 ReactDOM.render(
   <React.StrictMode>
     <Provider {...store}>
-      <Loading />
       <Router history={history}>
+        <Loading />
         <Routes />
       </Router>
     </Provider>

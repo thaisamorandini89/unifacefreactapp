@@ -10,8 +10,10 @@ from 'semantic-ui-react';
 import { inject, observer } from 'mobx-react';
 
 import HomeStore from './store';
+import NewRouterStore from '../../mobx/router.store';
 
 interface Props{
+    router: NewRouterStore;
     home: HomeStore;
 }
 

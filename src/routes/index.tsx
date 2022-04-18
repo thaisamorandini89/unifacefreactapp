@@ -7,6 +7,7 @@ import {
 }from 'react-router-dom';
 import MainMenu from '../components/main-menu';
 import { Divider } from 'semantic-ui-react';
+import NotFound from '../containers/not-found';
 import { endpoints } from './endpoints';
 
 // @ts-ignore
@@ -22,6 +23,7 @@ export default class Routes extends React.Component{
                 {endpoints.map((route, i)=> (
                     <Route key={i} {...route} />
                 ))}
+                <Route path='*' exact={true} render={props => <NotFound {...props} />} />
             </Switch>
         </>
     }
